@@ -97,10 +97,10 @@ class StudentController extends Controller
 			'first' => 'required|alpha',
 			'last' => 'required|alpha',
 			'rollnumber' => 'required|string',
-			'branch' => 'required|between:0,10',
-			'year' => 'required|integer',
+			// 'branch' => 'required|between:0,10',
+			// 'year' => 'required|integer',
 			'email' => 'required|email',
-			'category' => 'required|between:0,5'
+			// 'category' => 'required|between:0,5'
 		]);
 
 		if ($validator) {
