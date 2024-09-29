@@ -30,7 +30,7 @@ class Books extends Model
     }
 
 
-    public function issues()
+    public function s()
     {
         return $this::count();
     }

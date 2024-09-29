@@ -1,38 +1,30 @@
 <?php
 
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LogController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\BooksController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\BooksController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LogController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\StudentController;
-
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\Route;
 
 // Define authentication routes
 // Auth::routes();
 
-// Unauthenticated routes
+// Unauthenticated routes, user must be logged out to access these
 Route::middleware('guest')->group(function () {
+
+    // Sign in (GET)
+    Route::get('/', [AccountController::class, 'getSignIn'])->name('account-sign-in');
+    Route::get('/login', [AccountController::class, 'getSignIn'])->name('login');
 
     Route::post('/create', [AccountController::class, 'postCreate'])->name('account-create-post');
 
     // Sign in (POST)
     Route::post('/sign-in', [AccountController::class, 'postSignIn'])->name('account-sign-in-post');
 
-    // Sign in (GET)
-    Route::get('/', [AccountController::class, 'getSignIn'])->name('account-sign-in');
-    Route::get('/login', [AccountController::class, 'getSignIn'])->name('login');
-
     // Create an account (GET)
     Route::get('/create', [AccountController::class, 'getCreate'])->name('account-create');
-
 
     // Student Registration (POST)
     Route::post('/student-registration', [StudentController::class, 'postRegistration'])->name('student-registration-post');
@@ -43,17 +35,12 @@ Route::middleware('guest')->group(function () {
     Route::get('/book', [BooksController::class, 'searchBook'])->name('search-book');
 });
 
-// Main books Controller left public so that it could be used without logging in too
-Route::resource('/books', BooksController::class);
-Route::get('/book-search/{string}', [BooksController::class, 'searchDasboardBook'])->name('book-search');
 
-
-// Authenticated routes
+// Authenticated routes, user must be logged in to access these
 Route::middleware('auth')->group(function () {
     // Home Page of Control Panel
     Route::get('/home', [HomeController::class, 'home'])->name('home');
     Route::get('/fetch-most-borrowed-books', [HomeController::class, 'fetchMostBorrowedBooks'])->name('home.chart');
-
 
     // Render Add Books panel
     Route::get('/student-issue-books/{userId}', [BooksController::class, 'displayStudentIssuedBooks'])->name('student-issue-books');
@@ -95,3 +82,7 @@ Route::middleware('auth')->group(function () {
     // Sign out (GET)
     Route::get('/sign-out', [AccountController::class, 'getSignOut'])->name('account-sign-out');
 });
+
+// Main books Controller, left public so that it could be used without logging in too
+Route::resource('/books', BooksController::class);
+Route::get('/book-search/{string}', [BooksController::class, 'searchDasboardBook'])->name('book-search');

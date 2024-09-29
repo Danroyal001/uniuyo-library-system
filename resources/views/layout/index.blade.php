@@ -8,10 +8,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="author" content="Alagie Singhateh">
     <meta name="description" content="Programming with singhateh from the gambia west africa">
-    <meta name="keywords" content="library management system, laravel 11, programming with singhateh">
+    <meta name="keywords" content="{{ getappName(); }}, laravel 11, programming with singhateh">
 
 
-    <title>Online Library Management System</title>
+    <title>{{ getAppName(); }}</title>
 
     <link type="text/css" href="{{ asset('static/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('static/bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">

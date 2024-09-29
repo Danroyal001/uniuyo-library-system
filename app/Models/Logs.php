@@ -38,6 +38,7 @@ class Logs extends Model
 		if (!empty($this->book->bookIssueStock->stock_number)) {
 			return $this?->book?->title . ' (' . $this->book->bookIssueStock->stock_number . ')';
 		}
+
 		return $this?->book?->title;
 	}
 

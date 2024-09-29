@@ -20,7 +20,7 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 COPY . .
 
 # Install PHP dependencies
-RUN composer install --no-dev --optimize-autoloader && php artisan key:generate
+RUN composer install --no-dev --optimize-autoloader && php artisan key:generate && php artisan migrate
 
 # Expose port 10000
 EXPOSE 10000

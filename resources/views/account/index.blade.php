@@ -14,7 +14,7 @@
     <link rel="image_src" href="" />
     <link rel="canonical" href="" />
 
-    <title>Online Library Management System</title>
+    <title>{{ getAppName(); }}</title>
 
     <link type="text/css" href="{{ asset('static/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link type="text/css" href="{{ asset('static/bootstrap/css/bootstrap-responsive.min.css') }}" rel="stylesheet">
