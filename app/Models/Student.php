@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Student extends Model
 {
-	protected $fillable = array('first_name', 'last_name', 'approved', 'category', 'roll_num', 'branch', 'year', 'email', 'status');
+	protected $fillable = ['first_name', 'last_name', 'approved', 'category', 'roll_num', 'branch', 'year', 'email', 'status'];
 
 	public $timestamps = false;
 
 	protected $table = 'students';
 	protected $primaryKey = 'student_id';
 
-	protected $hidden = array();
+	protected $hidden = [];
 
 
 	function bookIssues(): HasMany

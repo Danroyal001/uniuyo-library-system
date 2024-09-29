@@ -30,7 +30,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="controls row-fluid">
-                                    <input class="span4" type="text" placeholder="Reg number" name="rollnumber"
+                                    <input class="span12" type="text" placeholder="Reg number" name="rollnumber"
                                         value="{{ Request::old('rollnumber') }}" />
                                     @if ($errors->has('rollnumber'))
                                         <span class="error"> {{ $errors->first('rollnumber') }}</span>
@@ -55,7 +55,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="controls row-fluid">
-                                    <input class="span8" type="email" placeholder="E-mail" name="email"
+                                    <input class="span12" type="email" placeholder="E-mail" name="email"
                                         autocomplete="false" value="{{ Request::old('email') }}" />
                                     <select class="span4" style="margin-bottom: 0;" name="category" hidden>
                                         <option value="0" selected>select category</option>
