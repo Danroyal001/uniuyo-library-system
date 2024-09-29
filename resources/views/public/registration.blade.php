@@ -45,7 +45,7 @@
                                         <span class="error"> {{ $errors->first('branch') }}</span>
                                     @endif
                                     <input class="span4" type="number" placeholder="Year" name="year"
-                                        value="{{ Request::old('year', ('' . date('Y-m-d h:i:s'))) ?? ('' . date('Y-m-d h:i:s')) }}" />
+                                        value="{{ Request::old('year', ('' . date('Y-m-d h:i:s'))) ?? ('' . date('Y-m-d h:i:s')) }}" hidden />
 
                                     @if ($errors->has('year'))
                                         <span class="error"> {{ $errors->first('year') }}</span>
