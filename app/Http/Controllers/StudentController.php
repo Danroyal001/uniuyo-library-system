@@ -134,11 +134,18 @@ class StudentController extends Controller
 
     protected function getStudentsByStatusForTable($status, $request)
     {
-        $query = Student::join('branches', 'branches.id', '=', 'students.branch')
-            ->join('student_categories', 'student_categories.cat_id', '=', 'students.category')
-            ->select('student_id', 'first_name', 'last_name', 'student_categories.category', 'roll_num', 'branches.branch', 'year', 'email', 'books_issued');
+        // $query = Student::join('branches', 'branches.id', '=', 'students.branch')
+        //     ->join('student_categories', 'student_categories.cat_id', '=', 'students.category')
+        //     ->select('student_id', 'first_name', 'last_name', 'student_categories.category', 'roll_num', 'branches.branch', 'year', 'email', 'books_issued');
 
-        $query->whereStatus($status);
+        // $query->whereStatus($status);
+
+        // $query = $this->applyFilters($query, $request);
+
+        // return $query->orderBy('student_id')->get();
+
+        $query = Student::select('student_id', 'first_name', 'last_name', 'roll_num', 'year', 'email', 'books_issued')
+            ->where('status', $status);
 
         $query = $this->applyFilters($query, $request);
 
