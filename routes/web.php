@@ -32,9 +32,9 @@ Route::middleware('guest')->group(function () {
     Route::get('/student-registration', [StudentController::class, 'getRegistration'])->name('student-registration');
 
     // Render search books panel
-    Route::get('/book', [BooksController::class, 'searchBook'])->name('search-book');
+    Route::redirect('/book', '/search-books');
+    Route::get('/search-books', [BooksController::class, 'searchBook'])->name('search-book');
 });
-
 
 // Authenticated routes, user must be logged in to access these
 Route::middleware('auth')->group(function () {
