@@ -14,10 +14,10 @@
 					<div class="module-body">
 						<div class="control-group">
 							<div class="controls row-fluid">
-								<input class="span12" type="text" placeholder="Username" name="username" value="{{ Request::old('login') }}"> 
+								<input class="span12" type="text" placeholder="Username" name="username" value="{{ Request::old('login') }}">
 								@if($errors->has('login'))
 									{{ $errors->first('login')}}
-								@endif								
+								@endif
 							</div>
 						</div>
 						<div class="control-group">
@@ -43,7 +43,7 @@
 								<button type="submit" class="btn btn-info pull-right">Create Account</button>
 							</div>
 						</div>
-						<a href="{{ URL::route('account-sign-in') }}">Already A User?</a>
+						<a href="{{ URL::route('account-sign-in') }}">Already A Librarian?</a>
 					</div>
 				</form>
 			</div>
