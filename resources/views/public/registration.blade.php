@@ -30,7 +30,7 @@
                             </div>
                             <div class="control-group">
                                 <div class="controls row-fluid">
-                                    <input class="span4" type="number" placeholder="Reg number" name="rollnumber"
+                                    <input class="span4" type="text" placeholder="Reg number" name="rollnumber"
                                         value="{{ Request::old('rollnumber') }}" />
                                     @if ($errors->has('rollnumber'))
                                         <span class="error"> {{ $errors->first('rollnumber') }}</span>
