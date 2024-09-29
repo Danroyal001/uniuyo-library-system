@@ -23,7 +23,7 @@
     <dd><%= obj.student.first_name %> <%= obj.student.last_name %></dd>
     <dt>Student Category</dt>
     <dd><%= obj.student.category %></dd>
-    <dt>Roll Number</dt>
+    <dt>Reg Number</dt>
     <dd><%= obj.student.roll_num %></dd>
 </dl>
 <%

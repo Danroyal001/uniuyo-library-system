@@ -51,7 +51,7 @@
                             <th>ID</th>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Roll Number</th>
+                            <th>Reg Number</th>
                             <th>Branch</th>
                             <th>Category</th>
                             <th>Approve</th>

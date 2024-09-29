@@ -35,15 +35,15 @@ class Student extends Model
 
 		// Listen for the creating event
 		static::creating(function ($student) {
-			$student->roll_num = $student->generateUniqueRollNumber(); // Generate a unique roll number
+			$student->roll_num = $student->generateUniqueRollNumber(); // Generate a unique Reg number
 		});
 	}
 
 	public function generateUniqueRollNumber()
 	{
 		do {
-			$rollNumber = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 5); // Generate a random roll number
-		} while (static::where('roll_num', $rollNumber)->exists()); // Check if roll number already exists
+			$rollNumber = substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 5); // Generate a random Reg number
+		} while (static::where('roll_num', $rollNumber)->exists()); // Check if Reg number already exists
 
 		return $rollNumber;
 	}

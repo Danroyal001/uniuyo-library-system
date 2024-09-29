@@ -33,7 +33,7 @@
     <dd><%= obj.category %></dd>
     <dt>Email ID</dt>
     <dd><%= obj.email %></dd>
-    <dt>Roll Number</dt>
+    <dt>Reg Number</dt>
     <dd><%= obj.roll_num %>/<%= obj.branch %>/<%= obj.year %></dd>
 
     <%
