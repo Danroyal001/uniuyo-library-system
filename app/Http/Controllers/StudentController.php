@@ -107,11 +107,11 @@ class StudentController extends Controller
 			$student = Student::create([
 				'first_name' => $request->first,
 				'last_name' => $request->last,
-				'category' => $request->category,
+				'category' => $request->category ?? '',
 				'roll_num' => $request->rollnumber,
 				'branch' => $request->branch,
 				'year' => $request->year ?? date('Y'),
-				'email' => $request->email,
+				'email' => $request->email ?? '',
 				'status' => 'new',
 			]);
 
