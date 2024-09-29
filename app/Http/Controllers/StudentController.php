@@ -110,7 +110,7 @@ class StudentController extends Controller
 				'category' => $request->category,
 				'roll_num' => $request->rollnumber,
 				'branch' => $request->branch,
-				'year' => $request->year,
+				'year' => $request->year ?? date('Y'),
 				'email' => $request->email,
 				'status' => 'new',
 			]);
