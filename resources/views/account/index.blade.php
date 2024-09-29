@@ -92,7 +92,9 @@
 
     @include('account.navigation_top')
     @include('account.message')
+
     @yield('content')
+    
     @include('account.navigation_bottom')
 
     <script src="{{ asset('static/scripts/jquery-1.9.1.min.js') }}" type="text/javascript"></script>
