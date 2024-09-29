@@ -15,8 +15,8 @@
 						<div class="control-group">
 							<div class="controls row-fluid">
 								<input class="span12" type="text" placeholder="Username" name="username" value="{{ Request::old('login') }}">
-								@if($errors->has('login'))
-									{{ $errors->first('login')}}
+								@if($errors->has('username'))
+									{{ $errors->first('username')}}
 								@endif
 							</div>
 						</div>
