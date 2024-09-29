@@ -12,7 +12,7 @@
                         <h3>Search Books</h3>
                     </div>
                     <div class="module-body">
-                        <form class="form-horizontal row-fluid">
+                        <form class="form-horizontal row-fluid" method="GET" action="{{ url('/books') }}">
                             <div class="control-group">
                                 <label class="control-label">Name or author <br> of the book</label>
                                 <div class="controls" style="margin-right: 1rem">
@@ -22,7 +22,7 @@
 
                             <div class="control-group">
                                 <div class="controls" id="search_book_button">
-                                    <a class="btn btn-info">Search Book</a>
+                                    <button type="submit" class="btn btn-info">Search Book</button>
                                 </div>
                             </div>
                         </form>
