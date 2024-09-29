@@ -40,7 +40,6 @@ class AccountController extends Controller
         if ($auth) {
 
             return Redirect::intended('home');
-
         } else {
 
             return Redirect::route('account-sign-in')
@@ -61,26 +60,26 @@ class AccountController extends Controller
             'password_again' => 'required|same:password',
         ]);
 
-        if (!$validator) {
-            return Redirect::route('account-create')
-                ->withErrors($validator)
-                ->withInput(); // fills the field with the old inputs what were correct
+        // if (!$validator) {
+        // return Redirect::route('account-create')
+        // ->withErrors($validator)
+        // ->withInput(); // fills the field with the old inputs what were correct
 
-        } else {
-            // create an account
-            $username = $request->get('username');
-            $password = $request->get('password');
+        // } else {
+        // create an account
+        $username = $request->get('username');
+        $password = $request->get('password');
 
-            $userdata = User::create([
-                'username' => $username,
-                'password' => Hash::make($password), // Changed the default column for Password
-            ]);
+        $userdata = User::create([
+            'username' => $username,
+            'password' => Hash::make($password), // Changed the default column for Password
+        ]);
 
-            if ($userdata) {
+        if ($userdata) {
 
-                return Redirect::route('account-sign-in')
-                    ->with('global', 'Your account has been created. We have sent you an email to activate your account');
-            }
+            return Redirect::route('account-sign-in')
+                ->with('global', 'Your account has been created. We have sent you an email to activate your account');
+            // }
         }
     }
 
@@ -101,5 +100,4 @@ class AccountController extends Controller
         Auth::logout();
         return Redirect::route('account-sign-in');
     }
-
 }
