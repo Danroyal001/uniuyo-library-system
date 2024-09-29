@@ -18,25 +18,25 @@ Route::get('/', function () {
 // Define authentication routes
 // Auth::routes();
 
-// Unauthenticated routes 
+// Unauthenticated routes
 Route::middleware('guest')->group(function () {
 
     Route::post('/create', [AccountController::class, 'postCreate'])->name('account-create-post');
 
-    // Sign in (POST) 
+    // Sign in (POST)
     Route::post('/sign-in', [AccountController::class, 'postSignIn'])->name('account-sign-in-post');
 
-    // Sign in (GET) 
+    // Sign in (GET)
     Route::get('/', [AccountController::class, 'getSignIn'])->name('account-sign-in');
     Route::get('/login', [AccountController::class, 'getSignIn'])->name('login');
 
-    // Create an account (GET) 
+    // Create an account (GET)
     Route::get('/create', [AccountController::class, 'getCreate'])->name('account-create');
 
 
-    // Student Registration (POST) 
+    // Student Registration (POST)
     Route::post('/student-registration', [StudentController::class, 'postRegistration'])->name('student-registration-post');
-    // Student Registration form 
+    // Student Registration form
     Route::get('/student-registration', [StudentController::class, 'getRegistration'])->name('student-registration');
 
     // Render search books panel
@@ -48,7 +48,7 @@ Route::resource('/books', BooksController::class);
 Route::get('/book-search/{string}', [BooksController::class, 'searchDasboardBook'])->name('book-search');
 
 
-// Authenticated routes 
+// Authenticated routes
 Route::middleware('auth')->group(function () {
     // Home Page of Control Panel
     Route::get('/home', [HomeController::class, 'home'])->name('home');
@@ -92,6 +92,6 @@ Route::middleware('auth')->group(function () {
     // Main Logs Controller resource
     Route::resource('/issue-log', LogController::class);
 
-    // Sign out (GET) 
+    // Sign out (GET)
     Route::get('/sign-out', [AccountController::class, 'getSignOut'])->name('account-sign-out');
 });
