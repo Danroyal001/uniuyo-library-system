@@ -30,13 +30,13 @@
                             </div>
                             <div class="control-group">
                                 <div class="controls row-fluid">
-                                    <input class="span4" type="number" placeholder="Roll number" name="rollnumber"
+                                    <input class="span4" type="number" placeholder="Reg number" name="rollnumber"
                                         value="{{ Request::old('rollnumber') }}" />
                                     @if ($errors->has('rollnumber'))
                                         <span class="error"> {{ $errors->first('rollnumber') }}</span>
                                     @endif
-                                    <select class="span4" style="margin-bottom: 0;" name="branch">
-                                        <option value="0">select branch</option>
+                                    <select class="span4" style="margin-bottom: 0;" name="branch" hidden>
+                                        <option value="0" selected>select branch</option>
                                         @foreach ($branch_list as $branch)
                                             <option value="{{ $branch->id }}">{{ $branch->branch }}</option>
                                         @endforeach
@@ -45,7 +45,7 @@
                                         <span class="error"> {{ $errors->first('branch') }}</span>
                                     @endif
                                     <input class="span4" type="number" placeholder="Year" name="year"
-                                        value="{{ Request::old('year') }}" />
+                                        value="{{ Request::old('year', ('' . date('Y-m-d h:i:s'))) ?? ('' . date('Y-m-d h:i:s')) }}" />
 
                                     @if ($errors->has('year'))
                                         <span class="error"> {{ $errors->first('year') }}</span>
@@ -57,8 +57,8 @@
                                 <div class="controls row-fluid">
                                     <input class="span8" type="email" placeholder="E-mail" name="email"
                                         autocomplete="false" value="{{ Request::old('email') }}" />
-                                    <select class="span4" style="margin-bottom: 0;" name="category">
-                                        <option value="0">select category</option>
+                                    <select class="span4" style="margin-bottom: 0;" name="category" hidden>
+                                        <option value="0" selected>select category</option>
                                         @foreach ($student_categories_list as $student_category)
                                             <option value="{{ $student_category->cat_id }}">
                                                 {{ $student_category->category }}</option>
