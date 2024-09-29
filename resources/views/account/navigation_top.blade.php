@@ -7,8 +7,8 @@
         </button>
         <div class="navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 profile-menu1">
-                <marquee class1="brand" style="color:#fff" behavior="" direction="">WELCOME TO ONLINE LIBRARY
-                    MANAGEMENT SYSTEM</marquee>
+                <marquee class1="brand" style="color:#fff" behavior="" direction="">WELCOME TO {{ getAppName() }}
+                </marquee>
             </ul>
         </div>
     </div>
