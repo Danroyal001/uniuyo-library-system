@@ -24,7 +24,7 @@ Route::middleware('guest')->group(function () {
     Route::post('/create', [AccountController::class, 'postCreate'])->name('account-create-post');
 
     // Create an account (GET)
-    Route::fet('/create', fn($request) => redirect('/register-librarian'));
+    Route::get('/create', fn($request) => redirect('/register-librarian'));
     Route::get('/register-librarian', [AccountController::class, 'getCreate'])->name('account-create');
 
     // Student Registration (POST)
