@@ -16,7 +16,7 @@
                             <div class="control-group">
                                 <label class="control-label">Name or author <br> of the book</label>
                                 <div class="controls" style="margin-right: 1rem">
-                                    <input type='text' class="span10" rows="2" />
+                                    <input type='text' name="string" class="span10" rows="2" />
                                 </div>
                             </div>
 
